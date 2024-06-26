@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/final_dotnet/final_dotnet.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/final_dotnet/final_dotnet.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "linux": {
+                "options": {
+                    "env": {
+                        // The FileSystemWatcher used by default wasnt working for me on linux, so I switched to the polling watcher.
+                        "DOTNET_USE_POLLING_FILE_WATCHER": "true"
+                    }
+                }
+            },
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/final_dotnet/final_dotnet.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+    ]
+}
