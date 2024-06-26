@@ -1,8 +1,8 @@
 The project contains 2 folder the frontend with name "crowdup" and the backend with name "final_dotnet"
 
-#How to run them both
+## How to run them both
 
-#crowdup 
+# crowdup 
 
 just run 2 commands 
 `npm i`
@@ -11,7 +11,7 @@ just run 2 commands
 
 and the frontend will start 
 
-#backend 
+# backend 
 
 now to start the backend simply do 
 
